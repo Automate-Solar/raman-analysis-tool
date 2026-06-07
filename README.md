@@ -8,11 +8,7 @@ Python tools and notebooks for working with Raman map data from CZTS samples. Th
 RAMAN-analysis/
 |-- analysis.py
 |-- analysis_dashboard.ipynb
-|-- archive/
-|-- data_folder/
-|-- parsed_spectra_551_points/
-|-- peak_info.md
-|-- plot_peak_map.py
+|-- ploting_too.py
 |-- preprocess.py
 |-- README.md
 |-- requirements.txt
@@ -23,17 +19,10 @@ RAMAN-analysis/
 ## What Each File Does
 
 - `analysis_dashboard.ipynb` - Notebook for interactive Raman data exploration and dashboard-style analysis.
-- `plot_peak_map.py` - Main command-line script for plotting Raman peak intensity maps, peak-to-base ratio maps, and Plotly dashboards from `.npz` hypercubes.
+- `ploting_tool.py` - Main command-line script for plotting Raman peak intensity maps, peak-to-base ratio maps, and Plotly dashboards from `.npz` hypercubes.
 - `preprocess.py` - Main command-line preprocessing pipeline for baseline correction, denoising, cosmic-ray removal, and spectral cropping.
-- `analysis.py` - Older or alternate preprocessing/analysis script with similar functionality to `preprocess.py`.
 - `utils.py` - Shared helper functions for parsing map text files, creating hypercubes, loading `.npz` data, smoothing maps, and normalizing data.
-- `peak_info.md` - Notes on Raman peak positions for CZTS and possible secondary phases.
 - `requirements.txt` - Python package list used for the current environment.
-- `data_folder/` - Raw Raman `.txt` and `.wdf` data files, plus older parsed output folders.
-- `parsed_spectra_551_points/` - Current parsed hypercube outputs:
-  - `raman_hypercube_manual.npz`
-  - `raman_hypercube_manual_processed.npz`
-- `archive/` - Older scripts, plots, dashboards, parser versions, and exported map images kept for reference.
 
 ## Data Format
 
@@ -156,17 +145,10 @@ The active repository no longer has a top-level parser CLI. Parsing helpers live
 - `save_hypercube`
 - `parse_and_save`
 
-Older parser scripts are kept in `archive/`, including:
-
-- `archive/single_data_parser.py`
-- `archive/run_parser.py`
-- `archive/single_data_parser.ipynb`
-
 Use these archived files as references if you need to regenerate `.npz` hypercubes from raw Raman `.txt` maps.
 
 ## Notes
 
-- Keep large raw Raman files in `data_folder/`.
 - Keep current parsed `.npz` files in a `parsed_spectra_*` folder.
 - Keep older experiments, generated plots, and deprecated scripts in `archive/`.
 - `preprocess.py` requires `ramanspy`.
